@@ -1,0 +1,31 @@
+footer {
+  margin: 2rem auto;
+}
+
+.app-detail, .app-index, .app-edit {
+  margin: 2rem;
+
+  img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+}
+.app-index, .app-edit {
+  text-align: center;
+}
+
+.app-detail, .app-index, .app-edit {
+  .MuiButtonGroup-vertical {
+    margin-top: 2rem;
+
+    .MuiButtonBase-root {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+button a {
+  color: inherit;
+  text-decoration: none;
+}
+
