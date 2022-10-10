@@ -1,6 +1,6 @@
-import api from "../api/api";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import api from '../api/api';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import ProductItem from './ProductItem';
@@ -23,14 +23,14 @@ function ProductList() {
           } catch (error) {
             console.error(error);
             toast.error('tivemos um erro, tente novamente mais tarde', {
-              position: "top-right",
+              position: 'top-right',
               autoClose: 5000,
               hideProgressBar: false,
               closeOnClick: false,
               pauseOnHover: true,
               draggable: true,
               progress: undefined,
-              theme: "dark",
+              theme: 'dark',
               });
           }
     };
@@ -42,7 +42,7 @@ function ProductList() {
   }, [])
 
   return (
-    <div className="app-index">
+    <div className='app-index'>
         <Grid container spacing={2}>
             {allProducts.map((product: productType) => {
                 return  <Grid item xs={6} md={4} lg={3}
@@ -56,7 +56,7 @@ function ProductList() {
             })}
         </Grid>
         <footer>
-          <Button variant="contained" size="large"><Link to="/product-edit">Adicionar Produto</Link></Button>
+          <Button variant='contained' size='large'><Link to='/product-edit'>Adicionar Produto</Link></Button>
         </footer>
     </div>
   );

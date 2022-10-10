@@ -7,8 +7,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 import { toast } from 'react-toastify';
-import api from "../api/api";
-import { Link } from "react-router-dom";
+import api from '../api/api';
+import { Link } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
@@ -32,27 +32,27 @@ function ProductItem({thumbnail, title, price, id}: ProductItemType) {
                     api.delete(`/products/${id}`)
                     .then(() => {
                         toast.success(`${title} excluido com sucesso`, {
-                            position: "top-right",
+                            position: 'top-right',
                             autoClose: 5000,
                             hideProgressBar: false,
                             closeOnClick: false,
                             pauseOnHover: true,
                             draggable: true,
                             progress: undefined,
-                            theme: "dark",
+                            theme: 'dark',
                         });
                     })
                     .catch((error) => {
                         console.error(error);
                         toast.error('tivemos um erro, tente novamente mais tarde', {
-                        position: "top-right",
+                        position: 'top-right',
                         autoClose: 5000,
                         hideProgressBar: false,
                         closeOnClick: false,
                         pauseOnHover: true,
                         draggable: true,
                         progress: undefined,
-                        theme: "dark",
+                        theme: 'dark',
                         });
                     });
                 }
@@ -65,24 +65,24 @@ function ProductItem({thumbnail, title, price, id}: ProductItemType) {
     }
     
     const buttons = [
-        <Button key="1" variant="contained" size="small"><Link to={`/product-details?id=${id}`}>Ver dados</Link></Button>,
-        <Button key="2" variant="contained" size="small"><Link to={`/product-edit?id=${id}`}>Alterar</Link></Button>,
-        <Button key="3" variant="contained" size="small" onClick={() => deleteItem()}>Excluir</Button>,
+        <Button key='1' variant='contained' size='small'><Link to={`/product-details?id=${id}`}>Ver dados</Link></Button>,
+        <Button key='2' variant='contained' size='small'><Link to={`/product-edit?id=${id}`}>Alterar</Link></Button>,
+        <Button key='3' variant='contained' size='small' onClick={() => deleteItem()}>Excluir</Button>,
     ];
 
   return (
     <Card>
         <CardMedia
-            component="img"
-            height="250"
+            component='img'
+            height='250'
             image={thumbnail}
             alt={title}
         />
         <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant='h5' component='div'>
                 {title}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant='body2' color='text.secondary'>
                 {price.toLocaleString('pt-BR', {
                     style: 'currency',
                     currency: 'BRL',
@@ -90,7 +90,7 @@ function ProductItem({thumbnail, title, price, id}: ProductItemType) {
             </Typography>
         </CardContent>
         <CardActions >
-            <ButtonGroup size="small" aria-label="small button group" fullWidth={true}>
+            <ButtonGroup size='small' aria-label='small button group' fullWidth={true}>
                 {buttons}
             </ButtonGroup>
         </CardActions>

@@ -8,7 +8,7 @@ import {
 import { toast } from 'react-toastify';
 import api from '../api/api';
 import { useEffect, useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -188,9 +188,9 @@ function ProductDetails() {
             <Grid container spacing={6}>
                 <Grid item xs={12} md={6}>
                     <TextField 
-                        id="standard-basic-title" 
-                        label="Título" 
-                        variant="standard" 
+                        id='standard-basic-title' 
+                        label='Título' 
+                        variant='standard' 
                         helperText={currentItem.title}
                         onChange={(event) => handleSetTitle(event)} 
                         fullWidth={true}
@@ -198,9 +198,9 @@ function ProductDetails() {
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <TextField 
-                        id="standard-basic-category" 
-                        label="Categoria" 
-                        variant="standard" 
+                        id='standard-basic-category' 
+                        label='Categoria' 
+                        variant='standard' 
                         helperText={currentItem.category}
                         onChange={(event) => handleSetCategory(event)} 
                         fullWidth={true}
@@ -210,9 +210,9 @@ function ProductDetails() {
             <Grid  container>
                 <Grid item xs={12}>
                     <TextField 
-                        id="standard-basic-description" 
-                        label="Descrição" 
-                        variant="standard"
+                        id='standard-basic-description' 
+                        label='Descrição' 
+                        variant='standard'
                         helperText={currentItem.description}
                         onChange={(event) => handleDescription(event)}  
                         fullWidth={true}
@@ -222,9 +222,9 @@ function ProductDetails() {
             <Grid  container>
                 <Grid item xs={12}>
                     <TextField 
-                        id="standard-basic-thumbnail" 
-                        label="Imagem" 
-                        variant="standard"
+                        id='standard-basic-thumbnail' 
+                        label='Imagem' 
+                        variant='standard'
                         helperText={currentItem.thumbnail} 
                         onChange={(event) => handleSetThumbnail(event)} 
                         fullWidth={true}
@@ -234,10 +234,10 @@ function ProductDetails() {
             <Grid container spacing={6}>
                 <Grid item xs={12} md={6}>
                     <TextField 
-                        id="standard-basic-price" 
-                        label="Preço"
-                        type="number"
-                        variant="standard" 
+                        id='standard-basic-price' 
+                        label='Preço'
+                        type='number'
+                        variant='standard' 
                         helperText={currentItem.price} 
                         onChange={(event) => handleSetPrice(event)}
                         fullWidth={true}
@@ -245,9 +245,9 @@ function ProductDetails() {
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <TextField 
-                        id="standard-basic-stock" 
-                        label="Estoque" 
-                        variant="standard" 
+                        id='standard-basic-stock' 
+                        label='Estoque' 
+                        variant='standard' 
                         helperText={currentItem.stock} 
                         onChange={(event) => handleSetStock(event)}
                         fullWidth={true}
@@ -255,7 +255,7 @@ function ProductDetails() {
                 </Grid>
             </Grid>
             <footer>
-                <Button variant="contained" size="large" onClick={() => handleSendProduct()}>
+                <Button variant='contained' size='large' onClick={() => handleSendProduct()}>
                     {currentItem.id ? 'Atualizar produto' : 'Adicionar Produto'}
                 </Button>
             </footer>

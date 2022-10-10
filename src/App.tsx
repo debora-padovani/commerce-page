@@ -9,16 +9,16 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-} from "react-router-dom";
+} from 'react-router-dom';
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className='App'>
         <Routes>
-          <Route path="/" element={<ProductList/>} />
-          <Route path="/product-details" element={<ProductDetails/>} />
-          <Route path="/product-edit" element={<ProductEdit/>} />
+          <Route path='/' element={<ProductList/>} />
+          <Route path='/product-details' element={<ProductDetails/>} />
+          <Route path='/product-edit' element={<ProductEdit/>} />
         </Routes>
         <ToastContainer />
       </div>
