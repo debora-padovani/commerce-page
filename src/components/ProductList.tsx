@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../api/api";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
@@ -18,7 +18,7 @@ function ProductList() {
 
     const getProducts = async () => {
         try {
-            const response = await axios.get('https://dummyjson.com/products?limit=12');
+            const response = await api.get('/products?limit=12');
             setAllProducts(response.data.products);
           } catch (error) {
             console.error(error);

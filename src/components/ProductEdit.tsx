@@ -6,7 +6,7 @@ import {
 } from '@mui/material';
 
 import { toast } from 'react-toastify';
-import axios from 'axios';
+import api from '../api/api';
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
@@ -89,7 +89,7 @@ function ProductDetails() {
 
     const handleSendProduct = () => {
         if (currentItem.id) {
-            axios.put(`https://dummyjson.com/products/${currentItem.id}`, newItem)
+            api.put(`/products/${currentItem.id}`, newItem)
             .then(() => {
                 toast.success('produto atualizado com sucesso', {
                     position: 'top-right',
@@ -118,7 +118,7 @@ function ProductDetails() {
                 });
         });
         } else {
-            axios.post('https://dummyjson.com/products/add', newItem)
+            api.post('/products/add', newItem)
                 .then(() => {
                     toast.success('produto adicionado com sucesso', {
                         position: 'top-right',
@@ -159,7 +159,7 @@ function ProductDetails() {
         if(param === 'id') {
             const id = value;
 
-            axios.get(`https://dummyjson.com/products/${id}`)
+            api.get(`/products/${id}`)
                 .then((response) => {
                     const items = {...response.data};
                     console.log(items);

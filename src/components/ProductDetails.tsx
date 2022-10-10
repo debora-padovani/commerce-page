@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 
 import { toast } from 'react-toastify';
-import axios from "axios";
+import api from "../api/api";
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { confirmAlert } from 'react-confirm-alert';
@@ -44,7 +44,7 @@ function ProductDetails() {
         if(param === 'id') {
             const id = value;
 
-            axios.get(`https://dummyjson.com/products/${id}`)
+            api.get(`/products/${id}`)
                 .then((response) => {
                     setItem(response.data);
                 })
@@ -75,7 +75,7 @@ function ProductDetails() {
               {
                 label: 'Excluir',
                 onClick: () => {
-                    axios.delete(`https://dummyjson.com/products/${item.id}`)
+                    api.delete(`/products/${item.id}`)
                     .then(() => {
                         toast.success(`${item.title} excluido com sucesso`, {
                             position: "top-right",

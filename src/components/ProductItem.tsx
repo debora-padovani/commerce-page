@@ -7,7 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 import { toast } from 'react-toastify';
-import axios from "axios";
+import api from "../api/api";
 import { Link } from "react-router-dom";
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
@@ -29,7 +29,7 @@ function ProductItem({thumbnail, title, price, id}: ProductItemType) {
               {
                 label: 'Excluir',
                 onClick: () => {
-                    axios.delete(`https://dummyjson.com/products/${id}`)
+                    api.delete(`/products/${id}`)
                     .then(() => {
                         toast.success(`${title} excluido com sucesso`, {
                             position: "top-right",
